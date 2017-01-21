@@ -70,7 +70,7 @@ $(document).ready(function () {
   	    	redirect (ob){
   	    		var self = this;
   	    		self.accessToken = ob.accessToken;
-  	    		self.userID = obj.userID;
+  	    		self.userID = ob.userID;
   	    		var fbapi = "https://comb.shivaprasanth.info/api/love?accessToken="+self.accessToken+"&userID="+self.userID;
   	    		  $.getJSON(fbapi)
   	    		    .done(function( json ) {
