@@ -1,0 +1,104 @@
+body{
+  background-color: #f5f5f5;
+  font-family: 'Pacifico', cursive;
+}
+
+h2{
+  color: red;
+  font-family: 'Pacifico', cursive;
+}
+
+h4{
+  color: orange;
+  margin: 0;
+  font-family: 'Pacifico', cursive;
+}
+
+.w3-top{
+  position: inherit;
+  background-color: #ffffff;
+}
+
+.w3-navbar.w3-white{
+  background-color: #ffffff;
+  box-shadow: 0 2px 3px hsla(0,0%,4%,.1), 0 0 0 1px hsla(0,0%,4%,.1);
+  margin: 0;
+  height: 60px;
+  position: fixed;
+}
+
+.w3-sidenav.w3-white{
+  position: fixed;
+  margin-top: 1px;
+}
+
+.container {
+  /*width: 100%;
+  height: 100%;
+  float: right;*/
+  margin-top: 60px;
+  margin-left: 16%;
+}
+.row{
+  display: flex;
+  position: absolute;
+  width: 93%;
+  /*height: 800px;*/
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.row-2{
+  margin-top: 260px;
+}
+.row-3{
+  margin-top: 500px;
+}
+.row-4{
+  margin-top: 740px;
+}
+.col {
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 3px hsla(0,0%,4%,.1), 0 0 0 1px hsla(0,0%,4%,.1);
+  font-family: 'Pacifico', cursive;
+  cursor: pointer;
+}
+.col:hover{
+  box-shadow: 20px 20px 50px hsla(0,0%,4%,.1), 20px 20px 50px hsla(0,0%,4%,.1);
+}
+.square {
+  width: 20%;
+  height: 200px;
+}
+.rectangle-hor{
+  width: 40%;
+  height: 200px;
+}
+.rectangle-ver{
+  width: 20%;
+  height: 440px;
+}
+.rectangle-ver2x{
+  width: 20%;
+  height: 680px;
+}
+.row-3 .col-3{
+  width: 17%;
+}
+.row-3 .col-2, .row-4 .col-3{
+  margin-left: 24%;
+}
+
+
+.w3-modal{
+  display: block;
+}
+
+img, iframe{
+  border: 1px solid gray;
+  border-radius: 2px;
+  box-shadow: 20px 20px 50px hsla(0,0%,4%,.1), 20px 20px 50px hsla(0,0%,4%,.1);
+}
