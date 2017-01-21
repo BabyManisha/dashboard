@@ -67,7 +67,7 @@ $(document).ready(function () {
 
   	    },
   	    methods: {
-  	    	redirect (obj){
+  	    	redirect (ob){
   	    		var self = this;
   	    		self.accessToken = ob.accessToken;
   	    		self.userID = obj.userID;
