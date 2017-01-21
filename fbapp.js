@@ -33,6 +33,9 @@ window.fbAsyncInit = function() {
       FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
                   // displayImage();
+                  console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
+                  console.log(response);
+                  console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
                   redirect();
             } else {
                   // If the user is NOT already logged in, we ask him to do it first
