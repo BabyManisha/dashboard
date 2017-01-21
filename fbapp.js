@@ -25,9 +25,9 @@ function post() {
 window.fbAsyncInit = function() {
       // The SDK is loaded so let's init it.
       FB.init({
-          appId : '1130006373787712',
+          appId : '1853777131504991',
           xfbml : true,
-          version : 'v2.8'
+          version : 'v2.6'
       });
       // We check the user's login status
       FB.getLoginStatus(function(response) {
