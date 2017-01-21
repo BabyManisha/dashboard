@@ -32,7 +32,9 @@ $(document).ready(function () {
   	    	                  console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
   	    	                  // sdbdfn
   	    	                  self.fbstatus = true;
-  	    	                  self.redirect(response.authResponse);
+  	    	                  self.accessToken = response.authResponse.accessToken;
+  	    					  self.userID = response.authResponse.userID;
+  	    	                  // self.redirect(response.authResponse);
   	    	            } else {
   	    	                  // If the user is NOT already logged in, we ask him to do it first
   	    	                  FB.login(function(response) {
@@ -42,7 +44,9 @@ $(document).ready(function () {
   	    	                                    console.log(response);
   	    	                                    console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
   	    	                                    self.fbstatus = true;
-  	    	                                    self.redirect(response.authResponse);
+  	    	                                    self.accessToken = response.authResponse.accessToken;
+  	    					  					self.userID = response.authResponse.userID;
+  	    	                                    // self.redirect(response.authResponse);
   	    	                        } else {
   	    	                                    // User refused to give your site permissions, no friends list !
   	    	                        }
@@ -64,13 +68,10 @@ $(document).ready(function () {
   	    	      fjs.parentNode.insertBefore(js, fjs);
   	    	}(document, 'script', 'facebook-jssdk'));
 
-
   	    },
   	    methods: {
-  	    	redirect (ob){
+  	    	redirect (){
   	    		var self = this;
-  	    		self.accessToken = ob.accessToken;
-  	    		self.userID = ob.userID;
   	    		var fbapi = "https://comb.shivaprasanth.info/api/love?accessToken="+self.accessToken+"&userID="+self.userID;
   	    		  $.getJSON(fbapi)
   	    		    .done(function( json ) {
