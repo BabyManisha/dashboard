@@ -76,10 +76,21 @@ $(document).ready(function () {
   	    		  $.getJSON(fbapi)
   	    		    .done(function( json ) {
   	    		      console.log(json);
+  	    		      console.log(json['url']);
+  	    		      var fbapi2 = json['url'];
+  	    		        $.getJSON(fbapi2)
+  	    		          .done(function( json1 ) {
+  	    		            console.log(json1);
+  	    		            
+  	    		          })
+  	    		          .fail(function( jqxhr, textStatus, error ) {
+  	    		            var err = textStatus + ", " + error;
+  	    		            console.log( "url2 Request Failed: " + err );
+  	    		        });
   	    		    })
   	    		    .fail(function( jqxhr, textStatus, error ) {
   	    		      var err = textStatus + ", " + error;
-  	    		      console.log( "Request Failed: " + err );
+  	    		      console.log( "url1 Request Failed: " + err );
   	    		  });
   	    	}
   	    }
