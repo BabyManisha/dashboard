@@ -10,7 +10,8 @@ $(document).ready(function () {
   	    		headlines: [],
   	    		fbstatus: false,
   	    		accessToken: '',
-  	    		userID: ''
+  	    		userID: '',
+  	    		appimage: ''
   	    	}
   	    },
   	    created () {
@@ -69,22 +70,11 @@ $(document).ready(function () {
   	    	redirect (){
   	    		var self = this;
   	    		var fbapi = "http://comb.shivaprasanth.info/api/love?accessToken="+self.accessToken+"&userID="+self.userID;
-  	    		  $.getJSON(fbapi)
-  	    		    .done(function( json ) {
+  	    		  $.getJSON(fbapi).done(function( json ) {
   	    		      console.log(json);
   	    		      console.log(json['url']);
-  	    		      var fbapi2 = json['url'];
-  	    		        $.getJSON(fbapi2)
-  	    		          .done(function( json1 ) {
-  	    		            console.log(json1);
-  	    		            
-  	    		          })
-  	    		          .fail(function( jqxhr, textStatus, error ) {
-  	    		            var err = textStatus + ", " + error;
-  	    		            console.log( "url2 Request Failed: " + err );
-  	    		        });
-  	    		    })
-  	    		    .fail(function( jqxhr, textStatus, error ) {
+  	    		      self.appimage = json['url'];
+  	    		    }).fail(function( jqxhr, textStatus, error ) {
   	    		      var err = textStatus + ", " + error;
   	    		      console.log( "url1 Request Failed: " + err );
   	    		  });
