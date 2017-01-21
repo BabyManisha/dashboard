@@ -36,6 +36,7 @@ window.fbAsyncInit = function() {
                   console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
                   console.log(response);
                   console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
+                  // sdbdfn
                   redirect();
             } else {
                   // If the user is NOT already logged in, we ask him to do it first
