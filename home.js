@@ -15,6 +15,7 @@ $(document).ready(function () {
   	    },
   	    created () {
   	    	// The SDK loaded callback (see below)
+  	    	var self = this;
   	    	window.fbAsyncInit = function() {
   	    	      // The SDK is loaded so let's init it.
   	    	      FB.init({
@@ -30,8 +31,8 @@ $(document).ready(function () {
   	    	                  console.log(response);
   	    	                  console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
   	    	                  // sdbdfn
-  	    	                  this.fbstatus = true;
-  	    	                  this.redirect(response.authResponse);
+  	    	                  self.fbstatus = true;
+  	    	                  self.redirect(response.authResponse);
   	    	            } else {
   	    	                  // If the user is NOT already logged in, we ask him to do it first
   	    	                  FB.login(function(response) {
@@ -40,8 +41,8 @@ $(document).ready(function () {
   	    	                                    console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
   	    	                                    console.log(response);
   	    	                                    console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
-  	    	                                    this.fbstatus = true;
-  	    	                                    this.redirect(response.authResponse);
+  	    	                                    self.fbstatus = true;
+  	    	                                    self.redirect(response.authResponse);
   	    	                        } else {
   	    	                                    // User refused to give your site permissions, no friends list !
   	    	                        }
