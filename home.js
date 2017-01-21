@@ -7,9 +7,13 @@ $(document).ready(function () {
   	    	return {
   	    		// popupHeader: this.$parent.popupHeader
   	    		popupHeader: 'Model Header',
-  	    		headlines: []
+  	    		headlines: [],
+  	    		fbstatus: fbstatus
   	    	}
   	    },
+  	    created () {
+  	    	console.log(this.fbstatus);
+  	    }
   	    // created (){
   	    // 	var self = this;
   	    // 	var googleNews = "https://newsapi.org/v1/articles?source=google-news&sortBy=top&apiKey=dfa97dc15cea425d9fbc3829ef7582f1";

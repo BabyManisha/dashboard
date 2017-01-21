@@ -9,6 +9,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript">
+    var fbstatus = false;
+  </script>
+  <script type="text/javascript" src="fbapp.js"></script>
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
 	<script type="text/javascript" src="home.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css">
@@ -215,6 +219,7 @@
             <h2>{{ popupHeader }}</h2>
           </header>
           <div class="w3-container">
+            <h4 v-show="fbstatus">FBLogin</h4>
             <p>You have two options to close this modal:</p>
             <p>Click on the "x" or click anywhere outside of the modal!</p>
           </div>
