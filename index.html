@@ -218,7 +218,7 @@
             <h2>{{ popupHeader }}</h2>
           </header>
           <div class="w3-container">
-            <button class="w3-red" v-show="!fbstatus" v-on:click="redirect()">Click to Check Your LOVE STATUS</button>
+            <button class="w3-red" v-show="fbstatus" v-on:click="redirect()">Click to Check Your LOVE STATUS</button>
             <button class="w3-green" v-if="appimage" v-on:click="redirect()">Check Again</button>
             <img v-show="fbstatus" :src="appimage" style="width:96%; height: 600px; margin-top: 10px; margin-left: 2%;margin-right: 5%;">
             <p>You have two options to close this modal:</p>
