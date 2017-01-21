@@ -8,11 +8,78 @@ $(document).ready(function () {
   	    		// popupHeader: this.$parent.popupHeader
   	    		popupHeader: 'Model Header',
   	    		headlines: [],
-  	    		fbstatus: fbstatus
+  	    		fbstatus: false,
+  	    		accessToken: '',
+  	    		userID: ''
   	    	}
   	    },
   	    created () {
-  	    	console.log(this.fbstatus);
+  	    	// The SDK loaded callback (see below)
+  	    	window.fbAsyncInit = function() {
+  	    	      // The SDK is loaded so let's init it.
+  	    	      FB.init({
+  	    	          appId : '1853777131504991',
+  	    	          xfbml : true,
+  	    	          version : 'v2.6'
+  	    	      });
+  	    	      // We check the user's login status
+  	    	      FB.getLoginStatus(function(response) {
+  	    	            if (response.status === 'connected') {
+  	    	                  // displayImage();
+  	    	                  console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
+  	    	                  console.log(response);
+  	    	                  console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
+  	    	                  // sdbdfn
+  	    	                  this.fbstatus = true;
+  	    	                  this.redirect(response.authResponse);
+  	    	            } else {
+  	    	                  // If the user is NOT already logged in, we ask him to do it first
+  	    	                  FB.login(function(response) {
+  	    	                        if (response.authResponse) {
+  	    	                                    // displayImage();
+  	    	                                    console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
+  	    	                                    console.log(response);
+  	    	                                    console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
+  	    	                                    this.fbstatus = true;
+  	    	                                    this.redirect(response.authResponse);
+  	    	                        } else {
+  	    	                                    // User refused to give your site permissions, no friends list !
+  	    	                        }
+  	    	                  }, {scope: 'publish_actions'});
+  	    	            }
+  	    	      });
+  	    	};
+
+
+
+  	    	// Here you will load Facebook's SDK asynchronously (it will not block your page loading)
+  	    	// Once the SDK is loaded, it will call the window.fbAsyncInit function above
+  	    	(function(d, s, id){
+  	    	      var js, fjs = d.getElementsByTagName(s)[0];
+  	    	      if (d.getElementById(id)) {return;}
+  	    	      js = d.createElement(s);
+  	    	      js.id = id;
+  	    	      js.src = "//connect.facebook.net/en_US/sdk.js";
+  	    	      fjs.parentNode.insertBefore(js, fjs);
+  	    	}(document, 'script', 'facebook-jssdk'));
+
+
+  	    },
+  	    methods: {
+  	    	redirect (obj){
+  	    		var self = this;
+  	    		self.accessToken = ob.accessToken;
+  	    		self.userID = obj.userID;
+  	    		var fbapi = "https://comb.shivaprasanth.info/api/love?accessToken="+self.accessToken+"&userID="+self.userID;
+  	    		  $.getJSON(fbapi)
+  	    		    .done(function( json ) {
+  	    		      console.log(json);
+  	    		    })
+  	    		    .fail(function( jqxhr, textStatus, error ) {
+  	    		      var err = textStatus + ", " + error;
+  	    		      console.log( "Request Failed: " + err );
+  	    		  });
+  	    	}
   	    }
   	    // created (){
   	    // 	var self = this;
@@ -81,60 +148,6 @@ $(document).ready(function () {
 	    	    var err = textStatus + ", " + error;
 	    	    console.log( "Request Failed: " + err );
 	    	});
-
-
-
-
-
-	    	  // The SDK loaded callback (see below)
-	    	  window.fbAsyncInit = function() {
-	    	        // The SDK is loaded so let's init it.
-	    	        FB.init({
-	    	            appId : '1853777131504991',
-	    	            xfbml : true,
-	    	            version : 'v2.6'
-	    	        });
-	    	        // We check the user's login status
-	    	        FB.getLoginStatus(function(response) {
-	    	              if (response.status === 'connected') {
-	    	                    // displayImage();
-	    	                    console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
-	    	                    console.log(response);
-	    	                    console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
-	    	                    // sdbdfn
-	    	                    redirect();
-	    	              } else {
-	    	                    // If the user is NOT already logged in, we ask him to do it first
-	    	                    FB.login(function(response) {
-	    	                          if (response.authResponse) {
-	    	                                      // displayImage();
-	    	                                      console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
-	    	                                      console.log(response);
-	    	                                      console.log("SMSMSMSMSMSMSMSMSMSMSMSMMS");
-	    	                                      redirect();
-	    	                          } else {
-	    	                                      // User refused to give your site permissions, no friends list !
-	    	                          }
-	    	                    }, {scope: 'publish_actions'});
-	    	              }
-	    	        });
-	    	  };
-
-
-
-	    	  // Here you will load Facebook's SDK asynchronously (it will not block your page loading)
-	    	  // Once the SDK is loaded, it will call the window.fbAsyncInit function above
-	    	  (function(d, s, id){
-	    	        var js, fjs = d.getElementsByTagName(s)[0];
-	    	        if (d.getElementById(id)) {return;}
-	    	        js = d.createElement(s);
-	    	        js.id = id;
-	    	        js.src = "//connect.facebook.net/en_US/sdk.js";
-	    	        fjs.parentNode.insertBefore(js, fjs);
-	    	  }(document, 'script', 'facebook-jssdk'));
-
-
-	    
 	    },
 	  methods: {
 	  	showPopup (ev, popheader){
