@@ -35,30 +35,6 @@
                 
         <SCRIPT charset="utf-8" type="text/javascript" src="http://ws-in.amazon-adsystem.com/widgets/q?rt=tf_cw&ServiceVersion=20070822&MarketPlace=IN&ID=V20070822%2FIN%2Fsiva0f-21%2F8010%2Fd5a2eb13-1ede-4845-b5e8-b0c98d96b4b2&Operation=GetScriptTemplate"> </SCRIPT> <NOSCRIPT><A rel="nofollow" HREF="http://ws-in.amazon-adsystem.com/widgets/q?rt=tf_cw&ServiceVersion=20070822&MarketPlace=IN&ID=V20070822%2FIN%2Fsiva0f-21%2F8010%2Fd5a2eb13-1ede-4845-b5e8-b0c98d96b4b2&Operation=NoScript">Amazon.in Widgets</A></NOSCRIPT>
 
-        <hr>
-
-
-        <a target="_blank"  href="https://www.amazon.in/gp/offer-listing/B00FXLC9V4/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=B00FXLC9V4&linkCode=as2&tag=siva0f-21&linkId=588ff534f45ab9a9a9575733949d8da6">
-        Apple iPhone 5s (Space Grey, 16GB)
-        <br><img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=IN&ASIN=B00FXLC9V4&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=siva0f-21" ></a><img src="//ir-in.amazon-adsystem.com/e/ir?t=siva0f-21&l=am2&o=31&a=B00FXLC9V4" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-
-        <hr>
-
-        <a target="_blank"  href="https://www.amazon.in/gp/offer-listing/B01DDP7GZK/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=B01DDP7GZK&linkCode=am2&tag=siva0f-21&linkId=b121c8503f3d03bd5108be78ed6c3547">
-        Moto G Plus, 4th Gen (Black, 32 GB) - Android 7.0 Nougat Update Available Now
-        <img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=IN&ASIN=B01DDP7GZK&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=siva0f-21" ></a><img src="//ir-in.amazon-adsystem.com/e/ir?t=siva0f-21&l=am2&o=31&a=B01DDP7GZK" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-
-        <hr>
-
-        <a target="_blank"  href="https://www.amazon.in/gp/offer-listing/B01LY79TUQ/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=B01LY79TUQ&linkCode=am2&tag=siva0f-21&linkId=cf5315a8f98a37ff2303770634ede0b1">
-        Skylofts Set of 40cm Cool Gogs Smiley Cushion & Winking Smiley Soft Stuffed Plush Pillow<img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=IN&ASIN=B01LY79TUQ&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=siva0f-21" ></a><img src="//ir-in.amazon-adsystem.com/e/ir?t=siva0f-21&l=am2&o=31&a=B01LY79TUQ" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-
-        <hr>
-
-        <a target="_blank"  href="https://www.amazon.in/gp/offer-listing/B01MQX871U/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=B01MQX871U&linkCode=am2&tag=siva0f-21&linkId=35fa8d7506f54c0a265fad4d5ff06f2e">
-        SAMSUNG Compatible Ceritfied T Powerbank 10000mah (Assorted Colour)
-        <img border="0" src="//ws-in.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=IN&ASIN=B01MQX871U&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL110_&tag=siva0f-21" ></a><img src="//ir-in.amazon-adsystem.com/e/ir?t=siva0f-21&l=am2&o=31&a=B01MQX871U" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-
       </nav>
 
       <popup v-show="popupStatus"></popup>
@@ -66,10 +42,8 @@
       <div class="container">
         <div class="row row-1">
           <div class="col box-1 col-1 rectangle-hor" @click="showPopup">
-            <h4>Celebrities</h4>
-            <img src="images/lovesm.jpg" style="width:45%; height: 130px; margin-top: 10px; margin-left: 2%;margin-right: 5%;"
-             class="w3-opacity"> 
-            <img src="images/lovems.png" style="width:45%; height: 130px; margin-top: 10px;"
+            <h4>Know Your Love Status</h4>
+            <img src="images/load.gif" style="width:100%; height: 130px; margin-top: 10px; margin-left: 2%;margin-right: 5%;"
              class="w3-opacity"> 
           </div>
 
@@ -221,11 +195,11 @@
             <button class="w3-red" v-show="fbstatus" v-on:click="redirect()">Click to Check Your LOVE STATUS</button>
             <button class="w3-green" v-if="appimage" v-on:click="redirect()">Check Again</button>
             <img class="fbimg" v-show="fbstatus" :src="appimage" style="width:96%; height: 600px; margin-top: 10px; margin-left: 2%;margin-right: 5%;">
-            <p>You have two options to close this modal:</p>
-            <p>Click on the "x" or click anywhere outside of the modal!</p>
+            <!-- <p>You have two options to close this modal:</p>
+            <p>Click on the "x" or click anywhere outside of the modal!</p> -->
           </div>
           <footer class="w3-container w3-teal">
-            <p>Modal Footer</p>
+            <p>Thank you..</p>
           </footer>
         </div>
     </div>

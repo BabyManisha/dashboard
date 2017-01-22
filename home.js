@@ -6,7 +6,7 @@ $(document).ready(function () {
   	    data: function(){
   	    	return {
   	    		// popupHeader: this.$parent.popupHeader
-  	    		popupHeader: 'Model Header',
+  	    		popupHeader: 'Know Your Love Status',
   	    		headlines: [],
   	    		fbstatus: false,
   	    		accessToken: '',
@@ -105,7 +105,7 @@ $(document).ready(function () {
 	var App = new Vue({
 	  el: '#app',
 	  data: {
-	    tittle: '..SivaMani..',
+	    tittle: 'AZ-Posts',
 	    popupStatus: false,
 	    popupHeader: 'Model Header',
 	    headlines: [],
