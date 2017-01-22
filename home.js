@@ -11,7 +11,8 @@ $(document).ready(function () {
   	    		fbstatus: false,
   	    		accessToken: '',
   	    		userID: '',
-  	    		appimage: ''
+  	    		appimage: '',
+  	    		shareStatus: false
   	    	}
   	    },
   	    created () {
@@ -89,6 +90,7 @@ $(document).ready(function () {
   	    	        // document.getElementById('status').innerHTML = response.id;
   	    	        console.log(response);
   	    	        console.log("SM Success!!");
+  	    	        self.shareStatus = true;
   	    	        // window.location = "https://www.facebook.com/";
   	    	        // window.location = "http://dashboard.babymanisha.com/";
   	    	    });

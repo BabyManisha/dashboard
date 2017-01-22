@@ -155,7 +155,8 @@
           </header>
           <div class="w3-container">
             <button class="w3-red" v-show="fbstatus" v-on:click="redirect()">Click to Check Your LOVE STATUS</button>
-            <button class="w3-green" v-if="appimage" v-on:click="shareIt()">Share It</button>
+            <button class="w3-green" v-if="appimage && !shareStatus" v-on:click="shareIt()">Share It</button>
+            <button class="w3-green" v-if="shareStatus" v-on:click="shareIt()">Shared Successfully</button>
             <img class="fbimg" v-show="fbstatus" :src="appimage" style="width:96%; height: 600px; margin-top: 10px; margin-left: 2%;margin-right: 5%;">
             <!-- <p>You have two options to close this modal:</p>
             <p>Click on the "x" or click anywhere outside of the modal!</p> -->
