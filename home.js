@@ -121,7 +121,7 @@ $(document).ready(function () {
 	    	      	var news = json['articles'][ob];
 	    	      	for(let ne in news){
 	    	        	// console.log( "JSON Data: " + news['description'] );
-	    	        	if(self.headlines.indexOf(news['description']) == -1 && self.headlines.length <= 1){
+	    	        	if(self.headlines.indexOf(news['description']) == -1 && self.headlines.length <= 10){
 	    	        		self.headlines.push(news['description']);
 	    	        	}
 	    	      	}
