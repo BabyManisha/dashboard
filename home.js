@@ -80,6 +80,7 @@ $(document).ready(function () {
   	    		  });
   	    	},
   	    	shareIt(){
+  	    		var self = this;
   	    	    FB.api('/me/feed', 'post', {
   	    	        message : "My Love Status....",
   	    	        link: 'http://dashboard.babymanisha.com/',
@@ -88,7 +89,8 @@ $(document).ready(function () {
   	    	        // document.getElementById('status').innerHTML = response.id;
   	    	        console.log(response);
   	    	        console.log("SM Success!!");
-  	    	        window.location = "https://www.facebook.com/";
+  	    	        // window.location = "https://www.facebook.com/";
+  	    	        // window.location = "http://dashboard.babymanisha.com/";
   	    	    });
   	    	}
   	    }
