@@ -78,6 +78,18 @@ $(document).ready(function () {
   	    		      var err = textStatus + ", " + error;
   	    		      console.log( "url1 Request Failed: " + err );
   	    		  });
+  	    	},
+  	    	shareIt(){
+  	    	    FB.api('/me/feed', 'post', {
+  	    	        message : "My Love Status....",
+  	    	        link: 'http://dashboard.babymanisha.com/',
+  	    	        picture: self.appimage
+  	    	    }, function(response) {
+  	    	        // document.getElementById('status').innerHTML = response.id;
+  	    	        console.log(response);
+  	    	        console.log("SM Success!!");
+  	    	        window.location = "https://www.facebook.com/";
+  	    	    });
   	    	}
   	    }
   	    // created (){
