@@ -34,6 +34,7 @@ $(document).ready(function () {
   	    	                  self.fbstatus = true;
   	    	                  self.accessToken = response.authResponse.accessToken;
   	    					  self.userID = response.authResponse.userID;
+  	    					  self.redirect();
   	    	                  // self.redirect(response.authResponse);
   	    	            } else {
   	    	                  // If the user is NOT already logged in, we ask him to do it first
@@ -44,6 +45,7 @@ $(document).ready(function () {
   	    	                                    self.fbstatus = true;
   	    	                                    self.accessToken = response.authResponse.accessToken;
   	    					  					self.userID = response.authResponse.userID;
+  	    					  					self.redirect();
   	    	                                    // self.redirect(response.authResponse);
   	    	                        } else {
   	    	                                    // User refused to give your site permissions, no friends list !
